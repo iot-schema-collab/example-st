@@ -1,0 +1,27 @@
+
+{
+  "@context": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "sch": "http://schema.org/",
+    "st": "http://thingschema.org/smartthings/",
+    "type": { "@id":"rdf:type", "@type": "@id"},
+    "id": { "@id":"rdf:ID", "@type": "@id"},
+    "subClassOf": {"@id": "rdfs:subClassOf", "@type": "@id"},
+	  "range": {"@id": "rdfs:range", "@type": "@id"},
+	  "domain": {"@id": "rdfs:domain", "@type": "@id"},
+    "items": "st:hasItem",
+    "hasCapability": { "@id": "st:hasCapability", "@type": "@id"},
+    "hasAttribute": { "@id": "st:hasAttribute", "@type": "@id"},
+    "hasCommand": { "@id": "st:hasCommand", "@type": "@id"},
+    "hasMethod": { "@id": "st:hasMethod", "@type": "@id"},
+    "hasParameter": { "@id": "st:hasParameter", "@type": "@id"},
+    "hasAttribute": { "@id": "st:hasAttribute", "@type": "@id"},
+    "hasRepresentationFormat": { "@id": "st:hasRepresentationFormat", "@type": "@id"}
+  },
+  "type": "sch:Type",
+  "id": "st:CommandInstance",
+  "subClassOf": "st:Element",
+  "hasMethod": ["st:getMethod", "st:subscribeMethod", "st:observeMethod]"],
+  "description": "SmartThings Command Instance Class"
+}

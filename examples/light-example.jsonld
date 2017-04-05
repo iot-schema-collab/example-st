@@ -1,0 +1,140 @@
+
+{
+  "@context": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "sch": "http://schema.org/",
+    "st": "http://thingschema.org/smartthings/",
+    "stc": "http://thingschema.org/smartthings/capabilities/",
+    "type": { "@id":"rdf:type", "@type": "@id"},
+    "id": { "@id":"rdf:ID", "@type": "@id"},
+    "subClassOf": {"@id": "rdfs:subClassOf", "@type": "@id"},
+	  "range": {"@id": "rdfs:range", "@type": "@id"},
+	  "domain": {"@id": "rdfs:domain", "@type": "@id"},
+    "items": "st:hasItem",
+    "hasCapability": { "@id": "st:hasCapability", "@type": "@id"},
+    "hasAttribute": { "@id": "st:hasAttribute", "@type": "@id"},
+    "hasCommand": { "@id": "st:hasCommand", "@type": "@id"},
+    "hasMethod": { "@id": "st:hasMethod", "@type": "@id"},
+    "hasParameter": { "@id": "st:hasParameter", "@type": "@id"},
+    "hasAttribute": { "@id": "st:hasAttribute", "@type": "@id"},
+    "hasRepresentationFormat": { "@id": "st:hasRepresentationFormat", "@type": "@id"}
+  },
+  "items":
+  [
+    {
+      "type": "sch:Type",
+      "id": "stc:light",
+      "subClassOf": "st:Thing",
+      "hasCapability": ["stc:switch", "stc:switchlevel", "stc:colortemperature", "stc:colorcontrol"]
+    },
+    {
+      "type": "sch:Type",
+      "id": "stc:switch",
+      "subClassOf": "st:Capability",
+      "hasAttribute": "stc:onoff",
+      "hasCommand": ["stc:on", "stc:off"]
+    },
+    {
+      "type": "sch:Type",
+      "id": "stc:switchlevel",
+      "subClassOf": "st:Capability",
+      "hasAttribute": ["stc:level"],
+      "hasCommand": ["stc:setLevel"]
+    },
+    {
+      "type": "sch:Type",
+      "id": "stc:colortemperature",
+      "subClassOf": "st:Capability",
+      "hasAttribute": "stc:colortemperature",
+      "hasCommand": "stc:setcolortemperature"
+    },
+    {
+      "type": "sch:Type",
+      "id": "stc:colorcontrol",
+      "subClassOf": "st:Capability",
+      "hasAttribute": ["stc:hue", "stc:saturation", "stc:color"],
+      "hasCommand": ["stc:sethue", "stc:setsaturation", "stc:setcolor"]
+    },
+    {
+      "type": "sch:Type",
+      "id": "stc:onoff",
+      "subClassOf": ["st:Attribute", "st:Parameter"],
+      "hasRepresentationFormat": "sch:string"
+    },
+    {
+      "type": "sch:Type",
+      "id": "stc:level",
+      "subClassOf": ["st:Attribute", "st:Parameter"],
+      "hasRepresentationFormat": "sch:number"
+    },
+    {
+      "type": "sch:Type",
+      "id": "stc:transitiontime",
+      "subClassOf": "st:Parameter",
+      "hasRepresentationFormat": "sch:number"
+    },
+    {
+      "type": "sch:Type",
+      "id": "stc:colortemperature",
+      "subClassOf": ["st:Attribute", "st:Parameter"],
+      "hasRepresentationFormat": "sch:number"
+    },
+    {
+      "type": "sch:Type",
+      "id": "stc:hue",
+      "subClassOf": ["st:Attribute", "st:Parameter"],
+      "hasRepresentationFormat": "sch:number"
+    },
+    {
+      "type": "sch:Type",
+      "id": "stc:saturation",
+      "subClassOf": ["st:Attribute", "st:Parameter"],
+      "hasRepresentationFormat": "sch:number"
+    },
+    {
+      "type": "sch:Type",
+      "id": "stc:hex",
+      "subClassOf": ["st:Attribute", "st:Parameter"],
+      "hasRepresentationFormat": "sch:string"
+    },
+    {
+      "type": "sch:Type",
+      "id": "stc:color",
+      "subClassOf": "st:Attribute",
+      "hasParameter": ["stc:hue", "stc:saturation", "stc:level", "stc:onoff", "stc:hex"],
+      "hasRepresentationFormat": "stc:colorformat"
+    },
+    {
+      "type": "sch:Type",
+      "id": "stc:on",
+      "subClassOf": "st:Command",
+      "hasRepresentationFormat": "sch:string"
+    },
+    {
+      "type": "sch:Type",
+      "id": "stc:off",
+      "subClassOf": "st:Command",
+      "hasRepresentationFormat": "sch:string"
+    },
+    {
+      "type": "sch:Type",
+      "id": "stc:setlevel",
+      "subClassOf": "st:Command",
+      "hasParameter": ["stc:level", "stc:transitiontime"]
+    },
+    {
+      "type": "sch:Type",
+      "id": "stc:setcolortemperature",
+      "subClassOf": "st:Command",
+      "hasParameter": ["stc:colortemperature"]
+    },
+    {
+      "type": "sch:Type",
+      "id": "stc:setcolor",
+      "subClassOf": "st:Command",
+      "hasParameter": ["stc:hue", "stc:saturation", "stc:level", "stc:onoff", "stc:hex"],
+      "hasRepresentationFormat": "stc:colorformat"
+    }
+  ]
+}
