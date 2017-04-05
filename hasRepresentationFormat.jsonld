@@ -1,0 +1,20 @@
+
+{
+  "@context": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "sch": "http://schema.org/",
+    "st": "http://thingschema.org/smartthings/",
+    "type": { "@id":"rdf:type", "@type": "@id"},
+    "id": { "@id":"rdf:ID", "@type": "@id"},
+    "subClassOf": {"@id": "rdfs:subClassOf", "@type": "@id"},
+	  "range": {"@id": "rdfs:range", "@type": "@id"},
+	  "domain": {"@id": "rdfs:domain", "@type": "@id"},
+    "items": "st:hasItem"
+  },
+  "type": "sch:Property",
+  "id": "st:hasRepresentationFormat",
+  "domain": ["st:Command", "st:Attribute", "st:CommandInstance", "st:Subscription", "st:Parameter"],
+  "range": "st:RepresentationFormat",
+  "description": "property to indicate a representation format in JSON-LD"
+}
